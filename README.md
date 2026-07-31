@@ -31,7 +31,6 @@
 | TF32 | 125.37 | TFLOPS |
 | BF16 | 252.86 | TFLOPS |
 | FP16 | 253.11 | TFLOPS |
-| INT16 | 10.30 | TOPS |
 | INT8 | 905.65 | TOPS |
 | FP8 E4M3 | 862.81 | TFLOPS |
 | FP8 E5M2 | UNSUPPORTED | — |
@@ -49,7 +48,6 @@
 | TF32 | 119.04 | TFLOPS |
 | BF16 | 240.22 | TFLOPS |
 | FP16 | 240.46 | TFLOPS |
-| INT16 | 9.88 | TOPS |
 | INT8 | 651.64 | TOPS |
 | FP8 E4M3 | 613.65 | TFLOPS |
 | FP8 E5M2 | UNSUPPORTED | — |
@@ -68,7 +66,6 @@
 | TF32 | 224.67 | TFLOPS |
 | BF16 | 447.06 | TFLOPS |
 | FP16 | 421.90 | TFLOPS |
-| INT16 | 6.18 | TOPS |
 | INT8 | 845.40 | TOPS |
 | FP8 E4M3 | 867.48 | TFLOPS |
 | FP8 E5M2 | UNSUPPORTED | — |
@@ -89,7 +86,6 @@
 | TF32 | FP32 | FP32 | TFLOPS | cuBLASLt FAST_TF32 |
 | BF16 | BF16 | FP32/BF16 | TFLOPS | cuBLASLt Tensor Core |
 | FP16 | FP16 | FP32/FP16 | TFLOPS | cuBLASLt Tensor Core |
-| INT16 | INT16 | INT32 | TOPS | 自定义 16x16 tiled CUDA Core GEMM |
 | INT8 | INT8 | INT32 | TOPS | cuBLASLt Tensor Core |
 | FP8 E4M3 | FP8 | FP32/FP16 | TFLOPS | cuBLASLt，TN 布局、Ada/Hopper+ |
 | FP8 E5M2 | FP8 | FP32/FP16 | TFLOPS | cuBLASLt，TN 布局、Ada/Hopper+ |
@@ -97,9 +93,6 @@
 | INT4 | INT4 | — | TOPS | 不支持：cuBLASLt 无 INT4 稠密 GEMM 内核 |
 
 所有测试均为稠密 GEMM，不使用 2:4 稀疏矩阵或稀疏 GEMM API。
-
-INT16 是自定义 CUDA Core 内核，不是 Tensor Core 指标，不应直接与 INT8
-Tensor Core TOPS 比较。
 
 INT4 报告 UNSUPPORTED：cuBLASLt 不提供 INT4 稠密 GEMM 内核（`CUDA_R_4I` 在各
 compute/output 组合与布局下均返回 `NOT_SUPPORTED`，已在多架构实测确认）。

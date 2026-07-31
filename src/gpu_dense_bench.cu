@@ -85,7 +85,7 @@ struct Options {
   bool quick = false;
   std::string output;              // 输出目录；空 = 默认 results/<时间戳>
   std::string precisions =
-      "int4,int8,fp8_e4m3,fp8_e5m2,nvfp4,int16,fp16,bf16,tf32,fp32,fp64";
+      "int4,int8,fp8_e4m3,fp8_e5m2,nvfp4,fp16,bf16,tf32,fp32,fp64";
 };
 
 struct PrecisionSpec {
@@ -1508,7 +1508,7 @@ bool parse_options(int argc, char** argv, Options* options) {
           << "  --device N          only test a single GPU (overrides --gpus)\n"
           << "  --gpus all|0,1,2    GPU list to test (default: all)\n"
           << "  --mode both|isolated|concurrent\n"
-          << "  --precisions int4,int8,fp8_e4m3,fp8_e5m2,nvfp4,int16,fp16,bf16,tf32,fp32,fp64\n"
+          << "  --precisions int4,int8,fp8_e4m3,fp8_e5m2,nvfp4,fp16,bf16,tf32,fp32,fp64\n"
           << "  --iters N --warmup N --workspace-mb N --timeout N\n"
           << "  --quick\n"
           << "  --output DIR        result directory (default: results/<UTC timestamp>)\n";
@@ -1595,7 +1595,7 @@ struct PrecisionSortKey {
 };
 PrecisionSortKey precision_sort_key(const std::string& name) {
   static const std::vector<std::string> order = {
-      "fp64", "fp32", "tf32", "bf16", "fp16", "int16",
+      "fp64", "fp32", "tf32", "bf16", "fp16",
       "int8", "fp8_e4m3", "fp8_e5m2", "nvfp4", "int4"};
   for (std::size_t i = 0; i < order.size(); ++i) {
     if (order[i] == name) return {0, static_cast<int>(i), std::string()};
