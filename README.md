@@ -27,14 +27,14 @@
 | 精度 | 单卡吞吐 | 单位 |
 |---|---|---|
 | FP64 | 1.77 | TFLOPS |
-| FP32 | 83.48 | TFLOPS |
-| TF32 | 125.37 | TFLOPS |
-| BF16 | 252.86 | TFLOPS |
-| FP16 | 253.11 | TFLOPS |
-| INT8 | 905.65 | TOPS |
-| FP8 E4M3 | 862.81 | TFLOPS |
+| FP32 | 83.24 | TFLOPS |
+| TF32 | 125.80 | TFLOPS |
+| BF16 | 254.03 | TFLOPS |
+| FP16 | 254.21 | TFLOPS |
+| INT8 | 906.14 | TOPS |
+| FP8 E4M3 | 773.52 | TFLOPS |
 | FP8 E5M2 | UNSUPPORTED | — |
-| NVFP4 | 1617.23 | TFLOPS |
+| NVFP4 | 1617.46 | TFLOPS |
 | INT4 | UNSUPPORTED | — |
 
 - INT4 / FP8 E5M2 在该架构下 cuBLASLt 无稠密 GEMM 内核，报 UNSUPPORTED，不伪造数值。
@@ -44,18 +44,17 @@
 | 精度 | 单卡吞吐 | 单位 |
 |---|---|---|
 | FP64 | 1.68 | TFLOPS |
-| FP32 | 82.26 | TFLOPS |
-| TF32 | 119.04 | TFLOPS |
-| BF16 | 240.22 | TFLOPS |
-| FP16 | 240.46 | TFLOPS |
-| INT8 | 651.64 | TOPS |
-| FP8 E4M3 | 613.65 | TFLOPS |
+| FP32 | 83.70 | TFLOPS |
+| TF32 | 119.34 | TFLOPS |
+| BF16 | 240.72 | TFLOPS |
+| FP16 | 240.66 | TFLOPS |
+| INT8 | 665.27 | TOPS |
+| FP8 E4M3 | 660.66 | TFLOPS |
 | FP8 E5M2 | UNSUPPORTED | — |
-| NVFP4 | 1195.70 | TFLOPS |
+| NVFP4 | 1177.03 | TFLOPS |
 | INT4 | UNSUPPORTED | — |
 
 - INT4 / FP8 E5M2 在该架构下 cuBLASLt 无稠密 GEMM 内核，报 UNSUPPORTED，不伪造数值。
-- 本次测试时机箱内其它卡有负载，INT8/FP8 最佳尺寸落在 4096³（受 PCIe/供电共享影响），数值偏低属正常环境差异。
 
 ### RTX PRO 6000 Blackwell Server Edition（CC 12.0，驱动 580.105.08，CUDA 12.9）
 
@@ -66,10 +65,10 @@
 | TF32 | 224.67 | TFLOPS |
 | BF16 | 447.06 | TFLOPS |
 | FP16 | 421.90 | TFLOPS |
-| INT8 | 845.40 | TOPS |
-| FP8 E4M3 | 867.48 | TFLOPS |
+| INT8 | 845.70 | TOPS |
+| FP8 E4M3 | 905.55 | TFLOPS |
 | FP8 E5M2 | UNSUPPORTED | — |
-| NVFP4 | 1538.90 | TFLOPS |
+| NVFP4 | 1599.24 | TFLOPS |
 | INT4 | UNSUPPORTED | — |
 
 - 专业卡（96 GB），整机空闲下测得，数据干净。
