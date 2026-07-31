@@ -12,6 +12,7 @@
 |---|---|---|---|---|
 | NVIDIA GeForce RTX 5090 D v2 | Blackwell | 12.0 | 24 GB | NVFP4 / FP8 E4M3 / INT8 等均可用；FP8 E5M2 与 INT4 报 UNSUPPORTED |
 | NVIDIA GeForce RTX 5090 | Blackwell | 12.0 | 32 GB | 性能数据见下表；FP8 E5M2 与 INT4 报 UNSUPPORTED |
+| NVIDIA RTX PRO 6000 Blackwell Server Edition | Blackwell | 12.0 | 96 GB | 专业卡，性能数据见下表；FP8 E5M2 与 INT4 报 UNSUPPORTED |
 
 > 欢迎补充：在你自己的卡上跑过后，把结果（精度、吞吐、是否 UNSUPPORTED）整理进此表即可。
 
@@ -57,6 +58,26 @@
 
 - INT4 / FP8 E5M2 在该架构下 cuBLASLt 无稠密 GEMM 内核，报 UNSUPPORTED，不伪造数值。
 - 本次测试时机箱内其它卡有负载，INT8/FP8 最佳尺寸落在 4096³（受 PCIe/供电共享影响），数值偏低属正常环境差异。
+
+### RTX PRO 6000 Blackwell Server Edition（CC 12.0，驱动 580.105.08，CUDA 12.9）
+
+| 精度 | 单卡吞吐 | 单位 |
+|---|---|---|
+| FP64 | 1.80 | TFLOPS |
+| FP32 | 84.62 | TFLOPS |
+| TF32 | 224.67 | TFLOPS |
+| BF16 | 447.06 | TFLOPS |
+| FP16 | 421.90 | TFLOPS |
+| INT16 | 6.18 | TOPS |
+| INT8 | 845.40 | TOPS |
+| FP8 E4M3 | 867.48 | TFLOPS |
+| NVFP4 | 1538.90 | TFLOPS |
+| FP8 E5M2 | UNSUPPORTED | — |
+| INT4 | UNSUPPORTED | — |
+
+- 专业卡（96 GB），整机空闲下测得，数据干净。
+- 同为 Blackwell 架构，但 TF32/BF16 吞吐显著高于消费级 5090（TF32 224 vs 125、BF16 447 vs 253 TFLOPS），NVFP4/FP8 与 5090 接近。
+- INT4 / FP8 E5M2 在该架构下 cuBLASLt 无稠密 GEMM 内核，报 UNSUPPORTED，不伪造数值。
 
 
 ## 支持的测试
