@@ -82,8 +82,8 @@ CUDA 13.0+ 对应高性能内核的必要条件。
 ### Linux / macOS
 
 ```bash
-tar -xzf gpu-flops-bench.tar.gz
-cd gpu-flops-bench
+tar -xzf nv_gpu_flops_test.tar.gz
+cd nv_gpu_flops_test
 ./run_gpu_flops.sh
 ```
 
@@ -98,7 +98,7 @@ bash run_gpu_flops.sh
 在「开发者命令提示符」或已配置好 CUDA 环境变量的命令提示符（CMD）中：
 
 ```cmd
-cd gpu-flops-bench
+cd nv_gpu_flops_test
 run_gpu_flops.bat
 ```
 
