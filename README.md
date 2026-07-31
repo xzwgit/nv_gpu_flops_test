@@ -39,6 +39,25 @@
 
 - INT4 / FP8 E5M2 在该架构下 cuBLASLt 无稠密 GEMM 内核，报 UNSUPPORTED，不伪造数值。
 
+### RTX 5090 D v2（CC 12.0，驱动 580.105.08，CUDA 13.0）
+
+| 精度 | 单卡吞吐 | 单位 |
+|---|---|---|
+| FP64 | 1.68 | TFLOPS |
+| FP32 | 82.26 | TFLOPS |
+| TF32 | 119.04 | TFLOPS |
+| BF16 | 240.22 | TFLOPS |
+| FP16 | 240.46 | TFLOPS |
+| INT16 | 9.88 | TOPS |
+| INT8 | 651.64 | TOPS |
+| FP8 E4M3 | 613.65 | TFLOPS |
+| NVFP4 | 1195.70 | TFLOPS |
+| FP8 E5M2 | UNSUPPORTED | — |
+| INT4 | UNSUPPORTED | — |
+
+- INT4 / FP8 E5M2 在该架构下 cuBLASLt 无稠密 GEMM 内核，报 UNSUPPORTED，不伪造数值。
+- 本次测试时机箱内其它卡有负载，INT8/FP8 最佳尺寸落在 4096³（受 PCIe/供电共享影响），数值偏低属正常环境差异。
+
 
 ## 支持的测试
 
