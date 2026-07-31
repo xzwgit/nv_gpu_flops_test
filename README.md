@@ -34,8 +34,8 @@
 | INT16 | 10.30 | TOPS |
 | INT8 | 905.65 | TOPS |
 | FP8 E4M3 | 862.81 | TFLOPS |
-| NVFP4 | 1617.23 | TFLOPS |
 | FP8 E5M2 | UNSUPPORTED | — |
+| NVFP4 | 1617.23 | TFLOPS |
 | INT4 | UNSUPPORTED | — |
 
 - INT4 / FP8 E5M2 在该架构下 cuBLASLt 无稠密 GEMM 内核，报 UNSUPPORTED，不伪造数值。
@@ -52,8 +52,8 @@
 | INT16 | 9.88 | TOPS |
 | INT8 | 651.64 | TOPS |
 | FP8 E4M3 | 613.65 | TFLOPS |
-| NVFP4 | 1195.70 | TFLOPS |
 | FP8 E5M2 | UNSUPPORTED | — |
+| NVFP4 | 1195.70 | TFLOPS |
 | INT4 | UNSUPPORTED | — |
 
 - INT4 / FP8 E5M2 在该架构下 cuBLASLt 无稠密 GEMM 内核，报 UNSUPPORTED，不伪造数值。
@@ -71,8 +71,8 @@
 | INT16 | 6.18 | TOPS |
 | INT8 | 845.40 | TOPS |
 | FP8 E4M3 | 867.48 | TFLOPS |
-| NVFP4 | 1538.90 | TFLOPS |
 | FP8 E5M2 | UNSUPPORTED | — |
+| NVFP4 | 1538.90 | TFLOPS |
 | INT4 | UNSUPPORTED | — |
 
 - 专业卡（96 GB），整机空闲下测得，数据干净。
