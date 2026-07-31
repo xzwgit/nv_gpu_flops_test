@@ -11,35 +11,33 @@
 | GPU | 架构 | 计算能力 | 备注 |
 |---|---|---|---|
 | NVIDIA GeForce RTX 5090 D v2 | Blackwell | 12.0 | NVFP4 / FP8 E4M3 / INT8 等均可用；FP8 E5M2 与 INT4 报 UNSUPPORTED |
-| NVIDIA GeForce RTX 5090 | Blackwell | 12.0 | 8 卡实测，性能数据见下表；FP8 E5M2 与 INT4 报 UNSUPPORTED |
+| NVIDIA GeForce RTX 5090 | Blackwell | 12.0 | 性能数据见下表；FP8 E5M2 与 INT4 报 UNSUPPORTED |
 
 > 欢迎补充：在你自己的卡上跑过后，把结果（精度、吞吐、是否 UNSUPPORTED）整理进此表即可。
 
 ## 实测性能数据
 
-> 以下为实际运行本工具测得的吞吐量（dense GEMM，非稀疏）。单卡为 isolated 隔离测试，
-> 多卡为 concurrent 并发测试（所有 GPU 同时运行）的聚合吞吐。完整原始结果见 `results/`。
+> 以下为实际运行本工具测得的单卡吞吐量（dense GEMM，非稀疏，isolated 隔离测试）。
+> 取各精度最佳有效矩阵尺寸的吞吐。完整原始结果见 `results/`。
 > 不同批次/驱动/功耗墙下数值可能有差异，仅供参考。
 
-### RTX 5090（8 卡机，CC 12.0，驱动 580.105.08，CUDA 13.0）
+### RTX 5090（CC 12.0，驱动 580.105.08，CUDA 13.0）
 
-| 精度 | 单卡 isolated | 8 卡 concurrent 聚合 | 单位 |
-|---|---|---|---|
-| FP64 | 1.77 | 14.10 | TFLOPS |
-| FP32 | 83.48 | 662.81 | TFLOPS |
-| TF32 | 125.37 | 999.05 | TFLOPS |
-| BF16 | 252.86 | 2008.86 | TFLOPS |
-| FP16 | 253.11 | 2016.34 | TFLOPS |
-| INT16 | 10.30 | 82.03 | TOPS |
-| INT8 | 905.65 | 7262.71 | TOPS |
-| FP8 E4M3 | 862.81 | 4122.30 | TFLOPS |
-| NVFP4 | 1617.23 | 12925.01 | TFLOPS |
-| FP8 E5M2 | UNSUPPORTED | UNSUPPORTED | — |
-| INT4 | UNSUPPORTED | UNSUPPORTED | — |
+| 精度 | 单卡吞吐 | 单位 |
+|---|---|---|
+| FP64 | 1.77 | TFLOPS |
+| FP32 | 83.48 | TFLOPS |
+| TF32 | 125.37 | TFLOPS |
+| BF16 | 252.86 | TFLOPS |
+| FP16 | 253.11 | TFLOPS |
+| INT16 | 10.30 | TOPS |
+| INT8 | 905.65 | TOPS |
+| FP8 E4M3 | 862.81 | TFLOPS |
+| NVFP4 | 1617.23 | TFLOPS |
+| FP8 E5M2 | UNSUPPORTED | — |
+| INT4 | UNSUPPORTED | — |
 
-- 单卡 isolated 取各精度最佳有效矩阵尺寸（8192³ 或 16384³，FP64 为 6144³）的吞吐。
 - INT4 / FP8 E5M2 在该架构下 cuBLASLt 无稠密 GEMM 内核，报 UNSUPPORTED，不伪造数值。
-- FP8 E4M3 并发时部分卡在个别尺寸下 cuBLASLt 启发式失败，聚合值为成功卡的结果之和。
 
 
 ## 支持的测试
