@@ -1,8 +1,8 @@
 # 编译产物（run_gpu_flops.sh 每次运行会重新编译）
 build/
 
-# 测试运行结果（与环境相关，每次运行生成）
-results/
+# 测试运行结果：保留作为原始性能数据存档（report.md/csv/json）
+# 如需排除某些临时结果，可在 results/ 下单独 .gitignore
 
 # Python 缓存
 __pycache__/
