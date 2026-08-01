@@ -56,23 +56,23 @@
 
 - INT4 / FP8 E5M2 在该架构下 cuBLASLt 无稠密 GEMM 内核，报 UNSUPPORTED，不伪造数值。
 
-### RTX PRO 6000 Blackwell Server Edition（CC 12.0，驱动 580.105.08，CUDA 12.9）
+### RTX PRO 6000 Blackwell Server Edition（CC 12.0，驱动 580.105.08，CUDA 13.0）
 
 | 精度 | 单卡吞吐 | 单位 |
 |---|---|---|
-| FP64 | 1.80 | TFLOPS |
-| FP32 | 84.62 | TFLOPS |
-| TF32 | 224.67 | TFLOPS |
-| BF16 | 447.06 | TFLOPS |
-| FP16 | 421.90 | TFLOPS |
-| INT8 | 845.70 | TOPS |
-| FP8 E4M3 | 905.55 | TFLOPS |
+| FP64 | 1.54 | TFLOPS |
+| FP32 | 83.60 | TFLOPS |
+| TF32 | 224.70 | TFLOPS |
+| BF16 | 457.61 | TFLOPS |
+| FP16 | 457.44 | TFLOPS |
+| INT8 | 845.39 | TOPS |
+| FP8 E4M3 | 905.32 | TFLOPS |
 | FP8 E5M2 | UNSUPPORTED | — |
-| NVFP4 | 1599.24 | TFLOPS |
+| NVFP4 | 1608.21 | TFLOPS |
 | INT4 | UNSUPPORTED | — |
 
 - 专业卡（96 GB），整机空闲下测得，数据干净。
-- 同为 Blackwell 架构，但 TF32/BF16 吞吐显著高于消费级 5090（TF32 224 vs 125、BF16 447 vs 253 TFLOPS），NVFP4/FP8 与 5090 接近。
+- 同为 Blackwell 架构，但 TF32/BF16 吞吐显著高于消费级 5090（TF32 225 vs 126、BF16 458 vs 254 TFLOPS），NVFP4/FP8 与 5090 接近。
 - INT4 / FP8 E5M2 在该架构下 cuBLASLt 无稠密 GEMM 内核，报 UNSUPPORTED，不伪造数值。
 
 
