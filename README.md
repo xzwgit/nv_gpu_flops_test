@@ -13,6 +13,7 @@
 | NVIDIA GeForce RTX 5090 D v2 | Blackwell | 12.0 | 24 GB | NVFP4 / FP8 E4M3 / INT8 等均可用；FP8 E5M2 与 INT4 报 UNSUPPORTED |
 | NVIDIA GeForce RTX 5090 | Blackwell | 12.0 | 32 GB | 性能数据见下表；FP8 E5M2 与 INT4 报 UNSUPPORTED |
 | NVIDIA RTX PRO 6000 Blackwell Server Edition | Blackwell | 12.0 | 96 GB | 专业卡，性能数据见下表；FP8 E5M2 与 INT4 报 UNSUPPORTED |
+| NVIDIA RTX PRO 5000 Blackwell | Blackwell | 12.0 | 48 GB | 专业卡，性能数据见下表；FP8 E5M2 与 INT4 报 UNSUPPORTED |
 
 > 欢迎补充：在你自己的卡上跑过后，把结果（精度、吞吐、是否 UNSUPPORTED）整理进此表即可。
 
