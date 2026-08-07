@@ -76,6 +76,26 @@
 - INT4 / FP8 E5M2 在该架构下 cuBLASLt 无稠密 GEMM 内核，报 UNSUPPORTED，不伪造数值。
 
 
+### RTX PRO 5000 Blackwell（CC 12.0，驱动 580.105.08，CUDA 13.0）
+
+| 精度 | 单卡吞吐 | 单位 |
+|---|---|---|
+| FP64 | 1.01 | TFLOPS |
+| FP32 | 52.41 | TFLOPS |
+| TF32 | 140.27 | TFLOPS |
+| BF16 | 257.12 | TFLOPS |
+| FP16 | 260.25 | TFLOPS |
+| INT8 | 551.88 | TOPS |
+| FP8 E4M3 | 557.34 | TFLOPS |
+| FP8 E5M2 | UNSUPPORTED | — |
+| NVFP4 | 1063.53 | TFLOPS |
+| INT4 | UNSUPPORTED | — |
+
+- 专业卡（8× RTX PRO 5000 Blackwell），整机空闲下测得，数据干净。
+- 同为 Blackwell 架构，性能约为 PRO 6000 的 60% 左右（TF32 140 vs 225、BF16 257 vs 458、NVFP4 1064 vs 1608 TFLOPS）。
+- INT4 / FP8 E5M2 在该架构下 cuBLASLt 无稠密 GEMM 内核，报 UNSUPPORTED，不伪造数值。
+
+
 ## 支持的测试
 
 | 名称 | 输入 | 累加/输出 | 单位 | 路径 |
